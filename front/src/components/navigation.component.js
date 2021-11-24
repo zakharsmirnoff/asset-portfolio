@@ -2,6 +2,13 @@ import { React, Component } from "react";
 import { Box, Nav, Button, Heading, CheckBox } from "grommet";
 
 class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false,
+    };
+  }
+
   render() {
     return (
       <Box fill="vertical" overflow="auto" align="stretch" flex="grow">
@@ -21,7 +28,15 @@ class NavBar extends Component {
             primary={true}
             size="large"
           />
-          <Button label="Trades" color="control" primary={true} size="large" />
+          <Button
+            label="Trades"
+            color="control"
+            primary={true}
+            size="large"
+            onChange={(event) => {
+              this.setState({ checked: event.target.checked });
+            }}
+          />
           <CheckBox label="Dark mode" toggle={true} />
         </Nav>
       </Box>
