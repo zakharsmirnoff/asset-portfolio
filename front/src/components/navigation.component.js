@@ -1,5 +1,6 @@
 import { React, Component } from "react";
 import { Box, Nav, Button, Heading, CheckBox } from "grommet";
+import HoldingsDataService from "../services/holdings.service.js";
 
 class NavBar extends Component {
   constructor(props) {
@@ -7,6 +8,21 @@ class NavBar extends Component {
     this.state = {
       checked: false,
     };
+    this.fetchData = this.fetchData.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    HoldingsDataService.getAll()
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
