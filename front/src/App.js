@@ -1,5 +1,7 @@
 import { Grommet } from 'grommet'
-import NavBar from './components/navigation.component';
+import { Routes, Route } from 'react-router-dom'
+import NavBar from '../src/components/navigation.component.js'
+import Charts from './components/charts.components'
 
 const theme = {
   global: {
@@ -15,7 +17,10 @@ const theme = {
 function App() {
   return (
     <Grommet theme={theme}>
-      <NavBar />
+      <Routes>
+        <Route exact path='/' element={<NavBar />} />
+        <Route path='/charts' element={<Charts />} />
+      </Routes>
     </Grommet>
   );
 }

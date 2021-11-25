@@ -9,6 +9,7 @@ class NavBar extends Component {
       checked: false,
     };
     this.fetchData = this.fetchData.bind(this);
+    this.redirectHandler = this.redirectHandler.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +24,10 @@ class NavBar extends Component {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  redirectHandler() {
+    return;
   }
 
   render() {
@@ -43,6 +48,13 @@ class NavBar extends Component {
             color="control"
             primary={true}
             size="large"
+          />
+          <Button
+            label="Charts"
+            color="control"
+            primary={true}
+            size="large"
+            onClick={this.redirectHandler}
           />
           <Button
             label="Trades"
