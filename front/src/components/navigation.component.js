@@ -1,6 +1,5 @@
 import { React, Component } from "react";
 import { Box, Nav, Button, Heading, CheckBox } from "grommet";
-import HoldingsDataService from "../services/holdings.service.js";
 
 class NavBar extends Component {
   constructor(props) {
@@ -8,26 +7,6 @@ class NavBar extends Component {
     this.state = {
       checked: false,
     };
-    this.fetchData = this.fetchData.bind(this);
-    this.redirectHandler = this.redirectHandler.bind(this);
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData() {
-    HoldingsDataService.getAll()
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  redirectHandler() {
-    return;
   }
 
   render() {
@@ -48,25 +27,29 @@ class NavBar extends Component {
             color="control"
             primary={true}
             size="large"
+            href="/holdings"
           />
           <Button
             label="Charts"
             color="control"
             primary={true}
             size="large"
-            onClick={this.redirectHandler}
+            href="/charts"
           />
           <Button
             label="Trades"
             color="control"
             primary={true}
             size="large"
-            onChange={(event) => {
-              this.setState({ checked: event.target.checked });
-            }}
+            href='/trades'
           />
           <CheckBox label="Dark mode" toggle={true} />
         </Nav>
+        <Box align="center" pad="xlarge">
+          <Heading textAlign="center" level="1" size="large">
+            Something will be here soon
+          </Heading>
+        </Box>
       </Box>
     );
   }

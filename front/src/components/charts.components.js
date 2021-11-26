@@ -1,5 +1,6 @@
 import { React, Component } from "react";
 import axios from "axios";
+import NavBar from "./navigation.component";
 
 class Charts extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Charts extends Component {
   }
 
   render() {
-    return <div></div>;
+    return <NavBar />;
   }
 }
 
