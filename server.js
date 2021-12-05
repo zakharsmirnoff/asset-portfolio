@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { holdings } = require("./app/models/holdings.model.js");
+const { trades } = require("./app/models/trades.model.js");
 
 const app = express();
 
@@ -11,6 +12,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 holdings.sync();
+trades.sync();
 
 app.use(express.json());
 

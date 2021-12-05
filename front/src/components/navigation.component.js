@@ -45,11 +45,6 @@ class NavBar extends Component {
           />
           <CheckBox label="Dark mode" toggle={true} />
         </Nav>
-        <Box align="center" pad="xlarge">
-          <Heading textAlign="center" level="1" size="large">
-            Something will be here soon
-          </Heading>
-        </Box>
       </Box>
     );
   }
