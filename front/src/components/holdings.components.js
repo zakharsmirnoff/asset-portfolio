@@ -1,7 +1,7 @@
 import { React, Component } from "react";
 import NavBar from "./navigation.component";
 import HoldingsDataService from "../services/holdings.service.js";
-import { DataTable, Box } from "grommet";
+import { DataTable, Box, Button } from "grommet";
 
 class Holdings extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class Holdings extends Component {
     return (
       <div>
         <NavBar />
-        <Box align="center" pad="xlarge">
+        <Box align="center" pad="small">
           <DataTable
             columns={[
               { property: "name", header: "Name", primary: true },
@@ -43,6 +43,9 @@ class Holdings extends Component {
             data={this.state.holdingsData}
             border={true}
           />
+        </Box>
+        <Box align="center" pad="medium">
+          <Button primary label="Add a new holding"></Button>
         </Box>
       </div>
     );
