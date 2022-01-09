@@ -26,14 +26,10 @@ class NewHolding extends Component {
     return (
       <div>
         <NavBar />
-        <Box align="center" pad="xlarge">
-          <Form
-            value={this.state.value}
-            onChange={this.onChangeHandler}
-            onSubmit={({ value }) => {}}
-            >
+        <Box align="center" pad="large">
+          <Form onSubmit={({ value }) => {}}>
             <FormField name="name" htmlFor="text-input-id" label="Name">
-              <TextInput id="text-input-id" name="name" />
+              <TextInput id="text-input-id" name="name" value={this.state.name} onChange={this.onChangeHandler}/>
             </FormField>
             <FormField name="amount" htmlFor="text-input-id" label="Amount">
               <TextInput id="text-input-id" name="amount" />
