@@ -11,7 +11,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <Box fill="vertical" overflow="auto" align="stretch" flex="grow">
+      <Box fill="vertical" overflow="auto" align="stretch">
         <Nav
           align="center"
           flex="false"

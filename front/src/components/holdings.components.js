@@ -45,7 +45,7 @@ class Holdings extends Component {
           />
         </Box>
         <Box align="center" pad="medium">
-          <Button primary label="Add a new holding"></Button>
+          <Button primary label="Add a new holding" href="/new"></Button>
         </Box>
       </div>
     );

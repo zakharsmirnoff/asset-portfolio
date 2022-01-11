@@ -5,8 +5,8 @@ class HoldingsDataService {
         return http.get("/holdings")
     }
 
-    create() {
-        return http.post("/holdings")
+    create(data) {
+        return http.post("/holdings", data)
     }
 }
 
