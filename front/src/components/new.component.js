@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBar from "./navigation.component";
 import HoldingsDataService from "../services/holdings.service";
 import InputForm from "./inputform.component";
-import { Form, Box } from 'grommet'
+import { Form, Box, FormField, TextInput, Button } from "grommet";
 
 class NewHolding extends Component {
   constructor(props) {
@@ -44,8 +44,34 @@ class NewHolding extends Component {
   }
 
   render() {
+    let array = [];
+    for (const value in this.state) {
+      array.push(value);
+    }
+    let elements = array.map((value, key) => {
+      return (
+        <FormField label={value} key={key}>
+          <TextInput key={key} />
+        </FormField>
+      );
+    });
     return (
-        <div></div>
+      <div>
+        <NavBar />
+        <Box pad="large">
+          <Form
+            onChange={this.onChangeHandler}
+            onSubmit={this.onSubmitHandler}
+            value={this.state}
+          >
+            {elements}
+            <Box direction="row" gap="medium" pad="large">
+              <Button type="submit" primary label="Submit" />
+              <Button type="reset" label="Reset" />
+            </Box>
+          </Form>
+        </Box>
+      </div>
     );
   }
 }
