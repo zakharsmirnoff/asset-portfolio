@@ -9,23 +9,42 @@ class NewHolding extends Component {
     super(props);
     this.state = {
       name: "",
-      amount: "",
-      totalCost: "",
-      averagePrice: "",
-      amountSold: "",
-      totalValueSold: "",
+      amount: 0,
+      totalCost: 0,
+      averagePrice: 0,
+      amountSold: 0,
+      totalValueSold: 0,
     };
 
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
+    this.onResetHandler = this.onResetHandler.bind(this);
   }
 
-  onChangeHandler(event) {
-    let value = event.target.value;
-    this.setState({ [event.target.name]: value });
+  onChangeHandler(value) {
+    this.setState({
+      name: value.name,
+      amount: value.amount,
+      totalCost: value.totalCost,
+      averagePrice: value.averagePrice,
+      amountSold: value.amountSold,
+      totalValueSold: value.totalValueSold,
+    });
+  }
+
+  onResetHandler() {
+    this.setState({
+      name: "",
+      amount: 0,
+      totalCost: 0,
+      averagePrice: 0,
+      amountSold: 0,
+      totalValueSold: 0,
+    });
   }
 
   onSubmitHandler() {
+    console.log(this.state);
     let data = {
       name: this.state.name,
       amount: parseFloat(this.state.amount),
@@ -37,6 +56,10 @@ class NewHolding extends Component {
     HoldingsDataService.create(data)
       .then((response) => {
         console.log(response);
+      })
+      .then(() => {
+        alert("The holding was succesfully added!");
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error);
@@ -50,19 +73,20 @@ class NewHolding extends Component {
     }
     let elements = array.map((value, key) => {
       return (
-        <FormField label={value} key={key}>
-          <TextInput key={key} />
+        <FormField label={value} key={key} name={value}>
+          <TextInput key={key} name={value} />
         </FormField>
       );
     });
     return (
       <div>
         <NavBar />
-        <Box pad="large">
+        <Box pad="large" align="center">
           <Form
-            onChange={this.onChangeHandler}
-            onSubmit={this.onSubmitHandler}
             value={this.state}
+            onSubmit={this.onSubmitHandler}
+            onChange={(value) => this.onChangeHandler(value)}
+            onReset={this.onResetHandler}
           >
             {elements}
             <Box direction="row" gap="medium" pad="large">
