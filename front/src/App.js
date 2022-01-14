@@ -1,10 +1,9 @@
 import { Grommet } from "grommet";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "../src/components/navigation.component.js";
 import Charts from "./components/charts.components.js";
 import Holdings from "./components/holdings.components.js";
 import Trades from "./components/trades.component.js";
-import NewHolding from "./components/new.component.js";
+import NewHolding from "./components/newHolding.component.js";
 
 const theme = {
   global: {

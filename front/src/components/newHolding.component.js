@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./navigation.component";
 import HoldingsDataService from "../services/holdings.service";
-import InputForm from "./inputform.component";
 import { Form, Box, FormField, TextInput, Button } from "grommet";
 
 class NewHolding extends Component {

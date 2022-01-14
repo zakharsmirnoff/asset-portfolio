@@ -1,7 +1,7 @@
 import { React, Component } from "react";
 import NavBar from "./navigation.component";
 import HoldingsDataService from "../services/holdings.service.js";
-import { DataTable, Box, Button } from "grommet";
+import AssetTable from "./table";
 
 class Holdings extends Component {
   constructor(props) {
@@ -10,6 +10,14 @@ class Holdings extends Component {
     this.state = {
       holdingsData: [],
     };
+    this.columns = [
+      { property: "name", header: "Name", primary: true },
+      { property: "amount", header: "Amount" },
+      { property: "totalCost", header: "Total Cost" },
+      { property: "averagePrice", header: "Average Price" },
+      { property: "amountSold", header: "Amount Sold" },
+      { property: "totalValueSold", header: "Total Value Sold" },
+    ];
   }
 
   componentDidMount() {
@@ -30,23 +38,7 @@ class Holdings extends Component {
     return (
       <div>
         <NavBar />
-        <Box align="center" pad="small">
-          <DataTable
-            columns={[
-              { property: "name", header: "Name", primary: true },
-              { property: "amount", header: "Amount" },
-              { property: "totalCost", header: "Total Cost" },
-              { property: "averagePrice", header: "Average Price" },
-              { property: "amountSold", header: "Amount Sold" },
-              { property: "totalValueSold", header: "Total Value Sold" },
-            ]}
-            data={this.state.holdingsData}
-            border={true}
-          />
-        </Box>
-        <Box align="center" pad="medium">
-          <Button primary label="Add a new holding" href="/new"></Button>
-        </Box>
+        <AssetTable columns={this.columns} data={this.state.holdingsData} />
       </div>
     );
   }
