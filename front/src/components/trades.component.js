@@ -27,7 +27,11 @@ class Trades extends Component {
   }
 
   render() {
-    return <NavBar />;
+    return (
+      <div>
+        <NavBar />
+      </div>
+    );
   }
 }
 

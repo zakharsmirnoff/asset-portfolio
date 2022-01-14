@@ -20,7 +20,7 @@ function App() {
   return (
     <Grommet theme={theme}>
       <Routes>
-        <Route exact path="/" element={<NavBar />} />
+        <Route exact path="/" element={<Holdings />} />
         <Route path="/charts" element={<Charts />} />
         <Route path="/holdings" element={<Holdings />} />
         <Route path="/trades" element={<Trades />} />
