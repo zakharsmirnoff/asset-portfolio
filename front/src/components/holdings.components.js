@@ -2,6 +2,7 @@ import { React, Component } from "react";
 import NavBar from "./navigation.component";
 import HoldingsDataService from "../services/holdings.service.js";
 import AssetTable from "./table";
+import { Button, Box } from 'grommet'
 
 class Holdings extends Component {
   constructor(props) {
@@ -39,6 +40,9 @@ class Holdings extends Component {
       <div>
         <NavBar />
         <AssetTable columns={this.columns} data={this.state.holdingsData} />
+        <Box align="center" pad="medium">
+          <Button primary label="Add a new holding" href="/new"></Button>
+        </Box>
       </div>
     );
   }

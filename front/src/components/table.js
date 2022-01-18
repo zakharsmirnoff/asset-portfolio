@@ -1,5 +1,5 @@
 import { React, Component } from "react";
-import { Box, Button, DataTable } from "grommet";
+import { Box, DataTable } from "grommet";
 
 class AssetTable extends Component {
   render() {
@@ -11,9 +11,6 @@ class AssetTable extends Component {
             data={this.props.data}
             border={true}
           />
-        </Box>
-        <Box align="center" pad="medium">
-          <Button primary label="Add a new "></Button>
         </Box>
       </div>
     );
