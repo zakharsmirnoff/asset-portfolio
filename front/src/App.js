@@ -4,6 +4,7 @@ import Charts from "./components/charts.components.js";
 import Holdings from "./components/holdings.components.js";
 import Trades from "./components/trades.component.js";
 import NewHolding from "./components/newHolding.component.js";
+import NewTrade from "./components/newTrade.component.js";
 
 const theme = {
   global: {
@@ -23,7 +24,8 @@ function App() {
         <Route path="/charts" element={<Charts />} />
         <Route path="/holdings" element={<Holdings />} />
         <Route path="/trades" element={<Trades />} />
-        <Route path="/new" element={<NewHolding />} />
+        <Route path="/new_holding" element={<NewHolding />} />
+        <Route exact path="/new_trade" element={<NewTrade />} />
       </Routes>
     </Grommet>
   );

@@ -29,7 +29,7 @@ class Trades extends Component {
   getAllTrades() {
     TradesDataService.getAll()
       .then((response) => {
-        this.setState({ tradesData: response });
+        this.setState({ tradesData: response.data });
         console.log(response);
       })
       .catch((error) => {
@@ -43,7 +43,7 @@ class Trades extends Component {
         <NavBar />
         <AssetTable columns={this.columns} data={this.state.tradesData} />
         <Box align="center" pad="medium">
-          <Button primary label="Add a new trade"></Button>
+          <Button primary label="Add a new trade" href="/new_trade"></Button>
         </Box>
       </div>
     );

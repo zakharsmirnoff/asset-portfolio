@@ -8,7 +8,7 @@ const trades = sequelize.define(
       type: DataTypes.STRING,
     },
     amount: {
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
     },
     price: {
       type: DataTypes.FLOAT,

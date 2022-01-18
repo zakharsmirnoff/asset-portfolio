@@ -12,7 +12,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 holdings.sync({ force: true });
-trades.sync();
+trades.sync({ force: true });
 
 app.use(express.json());
 

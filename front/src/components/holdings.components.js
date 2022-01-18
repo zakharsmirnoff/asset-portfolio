@@ -41,7 +41,7 @@ class Holdings extends Component {
         <NavBar />
         <AssetTable columns={this.columns} data={this.state.holdingsData} />
         <Box align="center" pad="medium">
-          <Button primary label="Add a new holding" href="/new"></Button>
+          <Button primary label="Add a new holding" href="/new_holding"></Button>
         </Box>
       </div>
     );

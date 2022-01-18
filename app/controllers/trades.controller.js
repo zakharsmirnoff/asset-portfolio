@@ -9,7 +9,7 @@ exports.create = (req, res) => {
   const trade = {
     trade: req.body.trade,
     amount: req.body.amount,
-    price: req.body.trade,
+    price: req.body.price,
     totalValue: req.body.totalValue,
     purchasePrice: req.body.purchasePrice,
     profit: req.body.profit,
