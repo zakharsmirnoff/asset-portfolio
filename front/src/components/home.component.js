@@ -14,21 +14,25 @@ class HomePage extends Component {
   }
 
   buttonHandler(event) {
+    console.log(event.target.innerText)
     this.setState({
       labelName: event.target.innerText,
     });
   }
 
   render() {
+    let element;
     if (this.state.labelName === "Holdings") {
-      return <Holdings />;
+      element = <Holdings />;
     } else if (this.state.labelName === "Trades") {
-      return <Trades />;
+      element = <Trades />;
     } else if (this.state.labelName === "Charts") {
-      return <Charts />;
+      element = <Charts />;
     } else {
-      return <NavBar buttonHandler={this.buttonHandler} />;
+      element = <NavBar buttonHandler={this.buttonHandler} />;
     }
+
+    return <div>{element}</div>;
   }
 }
 
