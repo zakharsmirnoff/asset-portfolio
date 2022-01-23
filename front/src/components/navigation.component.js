@@ -10,43 +10,43 @@ class NavBar extends Component {
   }
 
   render() {
-    return (
-      <Box fill="vertical" overflow="auto" align="stretch">
-        <Nav
-          align="center"
-          flex="false"
-          direction="row"
-          justify="center"
-          pad="medium"
-        >
-          <Heading margin={{ right: "xlarge" }} textAlign="start" level="1">
-            Portfolio
-          </Heading>
-          <Button
-            label="Holdings"
-            color="control"
-            primary={true}
-            size="large"
-            href="/holdings"
-          />
-          <Button
-            label="Charts"
-            color="control"
-            primary={true}
-            size="large"
-            href="/charts"
-          />
-          <Button
-            label="Trades"
-            color="control"
-            primary={true}
-            size="large"
-            href='/trades'
-          />
-          <CheckBox label="Dark mode" toggle={true} />
-        </Nav>
-      </Box>
-    );
+      return (
+        <Box fill="vertical" overflow="auto" align="stretch">
+          <Nav
+            align="center"
+            flex="false"
+            direction="row"
+            justify="center"
+            pad="medium"
+          >
+            <Heading margin={{ right: "xlarge" }} textAlign="start" level="1">
+              Portfolio
+            </Heading>
+            <Button
+              label="Holdings"
+              color="control"
+              primary={true}
+              size="large"
+              onClick={this.props.buttonHandler}
+            />
+            <Button
+              label="Charts"
+              color="control"
+              primary={true}
+              size="large"
+              onClick={this.props.buttonHandler}
+            />
+            <Button
+              label="Trades"
+              color="control"
+              primary={true}
+              size="large"
+              onClick={this.props.buttonHandler}
+            />
+            <CheckBox label="Dark mode" toggle={true} />
+          </Nav>
+        </Box>
+      );
   }
 }
 
