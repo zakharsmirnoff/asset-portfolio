@@ -5,7 +5,6 @@ import Holdings from "./components/holdings.components.js";
 import Trades from "./components/trades.component.js";
 import NewHolding from "./components/newHolding.component.js";
 import NewTrade from "./components/newTrade.component.js";
-import HomePage from "./components/home.component.js";
 
 const theme = {
   global: {
@@ -21,7 +20,7 @@ function App() {
   return (
     <Grommet theme={theme}>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/" element={<Holdings />} />
         <Route path="/charts" element={<Charts />} />
         <Route path="/holdings" element={<Holdings />} />
         <Route path="/trades" element={<Trades />} />

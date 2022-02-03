@@ -9,7 +9,6 @@ class Trades extends Component {
   constructor(props) {
     super(props);
     this.getAllTrades = this.getAllTrades.bind(this);
-    this.buttonHandler = this.buttonHandler.bind(this);
     this.state = {
       tradesData: [],
       buttonClicked: false,
@@ -39,12 +38,6 @@ class Trades extends Component {
       });
   }
 
-  buttonHandler() {
-    this.setState({
-      buttonClicked: true,
-    });
-  }
-
   render() {
     if (this.state.buttonClicked) {
       return <NewTrade />;
@@ -54,11 +47,7 @@ class Trades extends Component {
           <NavBar />
           <AssetTable columns={this.columns} data={this.state.tradesData} />
           <Box align="center" pad="medium">
-            <Button
-              primary
-              label="Add a new trade"
-              onClick={this.buttonHandler}
-            ></Button>
+            <Button primary label="Add a new trade" href="/new_trade"></Button>
           </Box>
         </div>
       );

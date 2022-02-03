@@ -9,10 +9,8 @@ class Holdings extends Component {
   constructor(props) {
     super(props);
     this.getAllHoldings = this.getAllHoldings.bind(this);
-    this.buttonHandler = this.buttonHandler.bind(this);
     this.state = {
       holdingsData: [],
-      buttonClicked: false,
     };
     this.columns = [
       { property: "name", header: "Name", primary: true },
@@ -38,12 +36,6 @@ class Holdings extends Component {
       });
   }
 
-  buttonHandler() {
-    this.setState({
-      buttonClicked: true,
-    });
-  }
-
   render() {
     if (this.state.buttonClicked) {
       return <NewHolding />;
@@ -56,7 +48,7 @@ class Holdings extends Component {
             <Button
               primary
               label="Add a new holding"
-              onClick={this.buttonHandler}
+              href="/new_holding"
             ></Button>
           </Box>
         </div>
